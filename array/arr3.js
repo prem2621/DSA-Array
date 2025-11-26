@@ -41,7 +41,73 @@
 //   }
 //   return "No Majority Element";
 // }
+// console.log(findMajority(arr))
+
+
+
+// let arr = [4, 6, 2, 2, 6, 6, 6, 4, 6];
+
+// function majority(arr) {
+//   let n = arr.length;
+//   let half = Math.floor(n / 2);
+//   let map = new Map();
+//   for (let num of arr) {
+//     map.set(num, (map.get(num) || 0) + 1);
+//     if (map.get(num) > half) {
+//       return num;
+//     }
+//   }
+//   return -1;
+// }
+// console.log(majority(arr));
+
+
+
+
+
+// let arr = ["apple","mango","pomag","apple","apple"]
+
+// function findMajority(arr){
+//   let n = arr.length
+//   let half = Math.floor(n/2)
+//   let map = new Map()
+//   for(let fruits of arr){
+//     if(map.has(fruits)){
+//       map.set(fruits,map.get(fruits)+1)
+//     }
+//     else{
+//       map.set(fruits,1)
+//     }
+//     if(map.get(fruits) > half){
+//       return fruits
+//     }
+//   }
+// }
 // console.log(findMajority(arr));
+
+
+
+
+
+
+//  let arr = [2,3,2,1,2,2,2]
+
+//  let obj = {};
+//   let n = arr.length
+//   let half = Math.floor(n/2)
+//   for(let i=0; i<n; i++){
+//     if(obj[arr[i]]){
+//       obj[arr[i]]++
+//     }
+//     else{
+//       obj[arr[i]] = 1
+//     }
+    
+//   }
+
+// console.log(obj);
+
+
 
 
 //Boyer-Moore algorithm
