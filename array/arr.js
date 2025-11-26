@@ -14,6 +14,11 @@
 // }
 // console.log(max);
 
+// 1️⃣ Lexicographic Sorting (default sort() in JS) 
+// JS la sort() comparator kudukkama call pannina, array elements string ah treat panni compare pannum.
+//  👉 "Lexicographic" = dictionary order (A → Z, 0 → 9).
+// arr.sort((a,b)=>a-b) nu use panna JS la numbers ascending order ku sort aagum.
+// But background la JS V8 engine (Chrome/Node.js la run aagura engine) TimSort algorithm use pannum (Merge Sort + Insertion Sort mix).
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
@@ -376,6 +381,26 @@
 // console.log(unionForSorted(arr1,arr2));
 
 
+// let union = [];
+// union.length = 0;
+// union[0]; // ❌ doesn't exist
+// union[-1]; // ❌ invalid
+// union[length - 1] = union[-1] = undefined;
+
+// if(union[union.length - 1] !== arr1[i])
+// if(undefined !== value)
+// Which is true, so element gets pushed ✔️ 
+// But if you used:                
+// if (union[union.length] !== arr1[i]) 
+
+// Then:
+// Union.length = 0 
+// So you are checking union[0] 
+// But union[0] actually exists ONLY after the first push. 
+// Before pushing, you will check wrong index. 
+// This breaks logic.
+
+
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
@@ -409,7 +434,7 @@
 //         let j = 0
 //         while(i<arr1.length && j<arr2.length){
 //                 if(arr1[i] === arr2[j]){
-//                         if(union[union.length] !== arr1[i]){
+//                         if(union[union.length-1] !== arr1[i]){
 //                                 union.push(arr1[i])
 //                         }
 //                         i++
